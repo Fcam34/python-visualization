@@ -1,12 +1,10 @@
-# CMT309 Coursework 2
-# student number:C1966881
 
-# 2.1 Visualisation
 import numpy as np
 import pandas as pd
 from matplotlib import pyplot as plt
 import seaborn as sns
 
+#bar
 def sale_history(df):
 	df = pd.read_csv('G:\\新建文件夹\\新建文件夹\\orders_cardiff_drinks.csv')
 	df['order_date'] = pd.to_datetime(df['order_date'])
@@ -20,7 +18,7 @@ def sale_history(df):
 	plt.show()
 
 
-# 2.2 Visualisation
+# heatmap
 
 def heatmap(df):
 	df = pd.read_csv('G:\\新建文件夹\\新建文件夹\\orders_cardiff_drinks.csv')
@@ -34,13 +32,11 @@ def heatmap(df):
 	sns.heatmap(C, cmap="GnBu")
 	plt.show()
 
-	# df -> df = pd.read_csv(orders_cardiff_drinks.csv)
-	# your code here, should generate a figure and it does not need to return anything
 
 
-# 2.3: QUESTIONS
 
-# •	How many orders were placed in 2016?
+
+# How many orders were placed in 2016?
 
 def count_orders_2016(df):
 	df = pd.read_csv('G:\\新建文件夹\\新建文件夹\\orders_cardiff_drinks.csv')
@@ -56,7 +52,7 @@ def count_orders_2016(df):
 
 
 
-# •	Which client has purchased the most number of soda bottles overall?
+# Which client has purchased the most number of soda bottles overall?
 
 def best_client_soda_bottles(df):
 	df = pd.read_csv('G:\\新建文件夹\\新建文件夹\\orders_cardiff_drinks.csv')
@@ -86,7 +82,7 @@ def best_weekday_for_wine(df):
 
 	return best_weekday
 
-# •	Which drink was the most popular (in GBP) in winter
+#Which drink was the most popular (in GBP) in winter
 #    (from Dec 21st to March 21st)? Break your answer down for each year.
 
 def most_popular_drink(df):
@@ -106,7 +102,7 @@ def most_popular_drink(df):
 	# your code here
 	return d
 
-# •	In which year-month (e.g. January 2015) was there the
+#   In which year-month (e.g. January 2015) was there the
 #   highest number of orders in which the quantity of wine bottles
 #   was higher than the average for that year?
 
@@ -140,21 +136,5 @@ def best_yearmonth_aboveavg_wine(df):
 
 	#answer:2016-12
 
-	# your code here
 	return best_ym
 
-
-# Test
-df = pd.read_csv('G:\\新建文件夹\\新建文件夹\\orders_cardiff_drinks.csv')
-sale_history(df)
-heatmap(df)
-print('How many orders were placed in 2016?')
-print(count_orders_2016(df))
-print('Which client has purchased the most number of soda bottles overall?')
-print(best_client_soda_bottles(df))
-print('In which weekday is wine sold the most on average?')
-print(best_weekday_for_wine(df))
-print('Which drink was the most popular (in GBP) in winter?')
-print(most_popular_drink(df))
-print('In which year-month (e.g. January 2015) was there the highest number of orders in which the quantity of wine bottles was higher than the average for that year?')
-print(best_yearmonth_aboveavg_wine(df))
