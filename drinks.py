@@ -6,7 +6,7 @@ import seaborn as sns
 
 #bar
 def sale_history(df):
-	df = pd.read_csv('G:\\新建文件夹\\新建文件夹\\orders_cardiff_drinks.csv')
+	df = pd.read_csv('G:\\新建文件夹\\新建文件夹\\orders_drinks.csv')
 	df['order_date'] = pd.to_datetime(df['order_date'])
 	df['order_date'] = df['order_date'].dt.year
 	plt.bar(df['order_date'].astype(float) - 0.3, df['soda_qty'], alpha=0.9, width=0.25, color='Skyblue',
@@ -67,7 +67,7 @@ def best_client_soda_bottles(df):
 
 	return best_client_id
 
-# •	In which weekday is wine sold the most on average
+# In which weekday is wine sold the most on average
 # (across the whole sales history)?
 
 def best_weekday_for_wine(df):
